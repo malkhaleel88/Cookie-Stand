@@ -20,8 +20,9 @@ function Branch(branchName, minCust, maxCust, avgPerCust){
   this.avgPerCust = avgPerCust;
   this.numOfCookie = [];
   this.total = 0;
-  this.columnArray = [];
   this.totalHourly = 0;
+  this.arrayOfTotal = [];
+  this.tot = 0;
   arrayOfBranch.push(this);
 
   this.calcNumOfCookie = function(){
@@ -89,19 +90,21 @@ Branch.prototype.tableFooter = function(){
 
     for (let m = 0; m < arrayOfBranch.length; m++) {
 
-      this.columnArray.push(arrayOfBranch[m].numOfCookie[i]);
-      this.totalHourly = this.totalHourly + this.columnArray[m];
+      this.totalHourly = this.totalHourly + arrayOfBranch[m].numOfCookie[i];
 
     }
+    this.arrayOfTotal.push(this.totalHourly);
     let tdft = document.createElement('td');
     trEl.appendChild(tdft);
     tdft.textContent = this.totalHourly;
   }
 
-
+  for (let d = 0; d < this.arrayOfTotal.length; d++) {
+    this.tot = this.tot + this.arrayOfTotal[d];
+  }
   let tdf2 = document.createElement('td');
   trEl.appendChild(tdf2);
-  tdf2.textContent = this.total;
+  tdf2.textContent = this.tot;
 
 };
 
