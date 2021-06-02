@@ -122,6 +122,27 @@ function tableFooter (){
 tableFooter();
 
 
+let addForm = document.getElementById('addNew');
+addForm.addEventListener('submit', addBranch);
+
+function addBranch(event){
+
+  event.preventDefault();
+
+  let nameBranch = event.target.newBranch.value;
+  let minNum = event.target.newMinCust.value;
+  let maxNum = event.target.newMaxCust.value;
+  let avgNum = event.target.newAvgPerCust.value;
+
+  let myBranch = new Branch(nameBranch, minNum, maxNum, avgNum);
+
+  myBranch.calcNumOfCookie();
+  myBranch.render();
+
+  tableEl.deleteRow(arrayOfBranch.length);
+  tableFooter();
+}
+
 // const Seattle = {
 //   MinCust: 23,
 //   MaxCust: 65,
