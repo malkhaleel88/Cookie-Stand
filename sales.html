@@ -3,6 +3,30 @@
 <head>
     <title>Salmon Cookies Info</title>
     <style>
+        form{
+            margin: 20px;
+            font-family: Arial;
+        }
+        fieldset{
+            width: 40%;
+            border: 3px solid black;
+        }
+        legend{
+            font-size: x-large;
+            font-weight: bolder;
+        }
+        label{
+            
+            font-size: medium;
+            font-weight: bold;
+        }
+        input{
+            margin-bottom: 5px;
+            font-size: medium;
+        }
+        input:required{
+            border:1px solid black;
+        }
       table, th, td{
           border: 3px solid black;
           border-collapse: collapse;
@@ -24,6 +48,24 @@
 
     </header>
     <main>
+        <form id="addNew">
+            <fieldset>
+                <legend>Branch Sales</legend>
+                <label for="newBranch">Branch Name :</label>
+                <input type="text" id="newBranch" required>
+                <br>
+                <label for="newMinCust">Minimum Number Of Customer :</label>
+                <input type="number" id="newMinCust" min="0" required> 
+                <br>
+                <label for="newMaxCust">Maximum Number Of Customer :</label>
+                <input type="number" id="newMaxCust" min="0" required> 
+                <br>
+                <label for="newAvgPerCust">Average Cookies Per Customer :</label>
+                <input type="number" id="newAvgPerCust" min="0" step="0.01" required> 
+                <br>
+                <input type="submit" id="submit">
+            </fieldset>
+        </form>
         <div id="Sales">
 
         </div>
