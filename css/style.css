@@ -38,7 +38,7 @@ h2, h3{
     margin-top: 35px;
 }
 p{
-    font-family: arial;
+    font-family: Arial, sans-serif;
     margin: 20px;
     font-size: 20px;
     width: 25%;
@@ -76,7 +76,12 @@ float: left;
 footer{
     clear: both;
     text-align: center;
-   
+     
 }
-
+footer h2{
+    float: left;
+}
+footer h3{
+    float: right;
+}
 
